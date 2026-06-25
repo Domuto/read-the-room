@@ -26,6 +26,11 @@ export const metadata: Metadata = {
     title: `${shop.name} — ${shop.tagline}`,
     description: "Vinyl + coffee in Atlanta. Dig the crate.",
     type: "website",
+    images: [{ url: "/png3.png" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/png3.png"],
   },
 };
 
