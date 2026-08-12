@@ -73,10 +73,17 @@ export default function RecordModal({
               <Spec label="Condition" value={record.condition} />
               <Spec
                 label="Price"
-                value={record.sold ? "Sold" : `$${record.price}`}
+                value={
+                  record.sold
+                    ? "Sold"
+                    : record.price == null
+                    ? "Ask"
+                    : `$${record.price}`
+                }
                 accent={!record.sold}
               />
               <Spec label="Year" value={record.year ? String(record.year) : "—"} />
+              {record.label && <Spec label="Label" value={record.label} wide />}
             </dl>
 
             {record.notes && (
@@ -113,13 +120,15 @@ function Spec({
   label,
   value,
   accent = false,
+  wide = false,
 }: {
   label: string;
   value: string;
   accent?: boolean;
+  wide?: boolean;
 }) {
   return (
-    <div className="bg-panel px-4 py-3">
+    <div className={`bg-panel px-4 py-3 ${wide ? "col-span-2" : ""}`}>
       <dt className="text-[10px] uppercase tracking-widest text-haze/70">
         {label}
       </dt>

@@ -12,7 +12,7 @@ export const shop = {
   // Shown in the top bars and footers
   handle: "@readtheroom.atl",
   address: "Atlanta, GA",
-  hours: "Open Daily · 8a–8p",
+  hours: "A Room for the Curious",
 
   // Links — paste your real URLs here
   instagram: "https://instagram.com/readtheroom.atl",

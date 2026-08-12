@@ -44,7 +44,7 @@ export default function RecordCard({
           <p className="truncate text-sm text-haze">{record.artist}</p>
         </div>
         <span className="shrink-0 font-mono text-xs text-ember">
-          {record.sold ? "—" : `$${record.price}`}
+          {record.sold ? "—" : record.price == null ? "Ask" : `$${record.price}`}
         </span>
       </div>
 

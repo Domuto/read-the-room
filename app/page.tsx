@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { shop } from "@/data/shop";
+import AmbientAudio from "@/components/home/AmbientAudio";
 
 const buttonClass =
   "rounded-full border border-paper/30 px-6 py-2.5 font-mono text-xs uppercase tracking-[0.2em] text-paper transition hover:border-ember hover:bg-ember hover:text-ink";
@@ -25,31 +27,37 @@ export default function Home() {
         </video>
       </div>
 
+      {/* Ambient background music with a mute / unmute toggle */}
+      <AmbientAudio />
+
       {/* Top bar */}
-      <header className="relative z-10 flex items-center justify-between px-5 py-5 sm:px-8">
-        <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-paper/80">
-          {shop.handle}
-        </span>
-        <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-paper/80">
-          {shop.hours}
-        </span>
+      <header className="relative z-10 flex items-center justify-center px-5 py-5 sm:justify-start sm:px-8">
+        <Image
+          src="/readtheroom.png"
+          alt={`${shop.name} logo`}
+          width={260}
+          height={70}
+          priority
+          className="h-12 w-auto sm:h-14"
+        />
       </header>
 
-      {/* Center */}
-      <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-5 text-center">
-        <p className="mt-6 max-w-md animate-fade-up font-mono text-sm uppercase tracking-[0.25em] text-paper/70">
-          {shop.tagline}
-        </p>
+      {/* Bottom-right CTA */}
+      <div className="relative z-10 flex flex-1" />
 
-        <nav className="mt-10 flex items-center justify-center">
-          <Link href="/crate" className={buttonClass}>
-            The Crate
-          </Link>
-        </nav>
-      </div>
+      <nav className="absolute bottom-16 left-1/2 z-20 flex -translate-x-1/2 items-center justify-center sm:bottom-8 sm:left-auto sm:translate-x-0 sm:justify-end sm:right-8">
+        <Link href="/crate" className={buttonClass}>
+          The Crate
+        </Link>
+      </nav>
+
+      <p className="absolute bottom-6 left-5 z-10 hidden max-w-md animate-fade-up text-left font-mono text-sm uppercase tracking-[0.25em] text-paper/70 sm:bottom-8 sm:left-8 sm:block">
+        {shop.tagline}
+      </p>
 
       {/* Bottom line */}
-      <footer className="relative z-10 px-5 py-6 text-center sm:px-8">
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-24 bg-gradient-to-t from-ink/70 to-transparent" />
+      <footer className="pointer-events-none absolute bottom-0 left-0 right-0 z-20 px-5 pb-6 pt-8 text-center sm:px-8 sm:pb-8">
         <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-paper/40">
           Spin something good
         </span>

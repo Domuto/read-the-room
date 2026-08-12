@@ -66,7 +66,7 @@ export default function CrateFlip({
     <div className="flex flex-col items-center">
       {/* The crate */}
       <div
-        className="relative h-[300px] w-full sm:h-[380px]"
+        className="relative h-[300px] w-full overflow-x-hidden sm:h-[380px]"
         style={{ perspective: "1400px" }}
         onTouchStart={(e) => {
           touchStartX.current = e.touches[0].clientX;
@@ -154,7 +154,12 @@ export default function CrateFlip({
           </p>
           <p className="truncate text-sm text-haze">{current.artist}</p>
           <p className="mt-1 font-mono text-[11px] uppercase tracking-widest text-ember">
-            {current.sold ? "Sold" : `$${current.price}`} · {current.condition}
+            {current.sold
+              ? "Sold"
+              : current.price == null
+              ? "Ask"
+              : `$${current.price}`}{" "}
+            · {current.condition}
           </p>
         </button>
 

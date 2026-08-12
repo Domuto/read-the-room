@@ -37,9 +37,14 @@ export default function CrateClient({ records }: { records: CrateRecord[] }) {
       return matchesQuery && matchesGenre;
     });
 
-    if (sort === "priceAsc") list = [...list].sort((a, b) => a.price - b.price);
+    if (sort === "priceAsc")
+      list = [...list].sort(
+        (a, b) => (a.price ?? Infinity) - (b.price ?? Infinity)
+      );
     else if (sort === "priceDesc")
-      list = [...list].sort((a, b) => b.price - a.price);
+      list = [...list].sort(
+        (a, b) => (b.price ?? -Infinity) - (a.price ?? -Infinity)
+      );
     else if (sort === "artist")
       list = [...list].sort((a, b) => a.artist.localeCompare(b.artist));
 
