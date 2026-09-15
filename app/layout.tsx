@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   description:
     "A vinyl record shop and coffee bar in Atlanta. Dig the crate, grab a coffee, spin something good.",
   openGraph: {
-    title: `${shop.name} — ${shop.tagline}`,
-    description: "Vinyl + coffee in Atlanta. Dig the crate.",
+    title: `${shop.name} — Vinyl and cocktails`,
+    description: "Vinyl and cocktails in Atlanta. Dig the crate.",
     type: "website",
     images: [{ url: "/png3.png" }],
   },
