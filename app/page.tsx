@@ -55,7 +55,7 @@ export default function Home() {
       </nav>
 
       <p className="absolute bottom-6 left-5 z-10 hidden max-w-md animate-fade-up text-left font-mono text-sm uppercase tracking-[0.25em] text-paper/70 sm:bottom-8 sm:left-8 sm:block">
-        {shop.tagline}
+        Vinyl & cocktails
       </p>
 
       {/* Bottom line */}
