@@ -7,11 +7,8 @@ export const metadata = {
 };
 
 // Matterport space embedded in-page so it never sends visitors off-site.
-// Params strip the built-in chrome: hl=0 hides the highlight reel, brand=0 hides
-// the logo/branding, mls=1 removes the Matterport link, help/title/mt hide the
-// help, title and floor UI, and dh=0 skips the dollhouse intro.
 const MATTERPORT_SRC =
-  "https://my.matterport.com/show/?m=6CMHTFhFgNo&play=1&qs=1&hl=0&brand=0&mls=1&help=0&title=0&mt=0&dh=0";
+  "https://my.matterport.com/show/?m=6CMHTFhFgNo&play=1&qs=1";
 
 export default function TourPage() {
   return (
@@ -39,11 +36,6 @@ export default function TourPage() {
           className="absolute inset-0 h-full w-full border-0"
           allow="xr-spatial-tracking; gyroscope; accelerometer; fullscreen; autoplay"
           allowFullScreen
-        />
-        {/* Masks the non-interactive "Powered by Matterport" logo in the corner. */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute left-0 top-0 z-10 h-14 w-52 bg-ink"
         />
       </div>
     </div>
