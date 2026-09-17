@@ -31,7 +31,7 @@ export default function Home() {
       <AmbientAudio />
 
       {/* Top bar */}
-      <header className="relative z-10 flex items-center justify-center px-5 py-5 sm:justify-start sm:px-8">
+      <header className="relative z-10 flex items-center justify-center px-5 py-5 sm:justify-between sm:px-8">
         <Image
           src="/readtheroom.png"
           alt={`${shop.name} logo`}
@@ -40,6 +40,26 @@ export default function Home() {
           priority
           className="h-12 w-auto sm:h-14"
         />
+        <nav className="absolute right-5 top-1/2 hidden -translate-y-1/2 items-center gap-6 sm:static sm:mr-16 sm:flex sm:translate-y-0">
+          <Link
+            href="/about"
+            className="font-mono text-[10px] uppercase tracking-[0.25em] text-paper/40 transition hover:text-paper/80"
+          >
+            About
+          </Link>
+          <Link
+            href="/private-events"
+            className="font-mono text-[10px] uppercase tracking-[0.25em] text-paper/40 transition hover:text-paper/80"
+          >
+            Private Events
+          </Link>
+          <Link
+            href="/contact"
+            className="font-mono text-[10px] uppercase tracking-[0.25em] text-paper/40 transition hover:text-paper/80"
+          >
+            Contact
+          </Link>
+        </nav>
       </header>
 
       {/* Bottom-right CTA */}
