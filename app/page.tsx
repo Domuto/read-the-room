@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { shop } from "@/data/shop";
 import AmbientAudio from "@/components/home/AmbientAudio";
+import MobileMenu from "@/components/home/MobileMenu";
 
 const buttonClass =
   "inline-flex min-w-[7.5rem] items-center justify-center whitespace-nowrap rounded-full border border-paper/30 px-6 py-3 font-mono text-xs uppercase tracking-[0.2em] text-paper transition hover:border-ember hover:bg-ember hover:text-ink sm:min-w-0";
@@ -60,6 +61,9 @@ export default function Home() {
             Contact
           </Link>
         </nav>
+
+        {/* Hamburger menu for phones (top nav is hidden below sm) */}
+        <MobileMenu />
       </header>
 
       {/* Bottom-right CTA */}
