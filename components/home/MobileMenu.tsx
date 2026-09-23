@@ -40,7 +40,7 @@ export default function MobileMenu() {
         onClick={() => setOpen(true)}
         aria-label="Open menu"
         aria-expanded={open}
-        className="absolute right-5 top-1/2 z-30 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-paper/30 bg-ink/30 text-paper backdrop-blur-sm transition hover:border-ember hover:text-ember"
+        className="absolute left-5 top-5 z-30 flex h-11 w-11 items-center justify-center rounded-full border border-paper/30 bg-ink/30 text-paper backdrop-blur-sm transition hover:border-ember hover:text-ember"
       >
         <svg
           width="20"

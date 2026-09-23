@@ -31,6 +31,11 @@ export default function Home() {
       {/* Ambient background music with a mute / unmute toggle */}
       <AmbientAudio />
 
+      {/* Hamburger menu for phones (top nav is hidden below sm).
+          Kept outside the header so its overlay isn't trapped under the
+          header's z-10 stacking context. */}
+      <MobileMenu />
+
       {/* Top bar */}
       <header className="relative z-10 flex items-center justify-center px-5 py-5 sm:justify-between sm:px-8">
         <Image
@@ -61,9 +66,6 @@ export default function Home() {
             Contact
           </Link>
         </nav>
-
-        {/* Hamburger menu for phones (top nav is hidden below sm) */}
-        <MobileMenu />
       </header>
 
       {/* Bottom-right CTA */}
