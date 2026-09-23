@@ -7,7 +7,7 @@
  */
 export const shop = {
   name: "Read the Room",
-  tagline: "Vinyl & Coffee · Atlanta",
+  tagline: "Vinyl & Cocktails · Atlanta",
 
   // Shown in the top bars and footers
   handle: "@readtheroom.atl",
