@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Space_Mono } from "next/font/google";
 import { shop } from "@/data/shop";
+// Klaviyo disabled for now — re-enable by uncommenting the import and <KlaviyoScript /> below.
+// import KlaviyoScript from "@/components/KlaviyoScript";
 import "./globals.css";
 
 // Display face — characteristic, used for big type.
@@ -50,6 +52,7 @@ export default function RootLayout({
       <body>
         {children}
         <div className="grain-overlay" aria-hidden="true" />
+        {/* <KlaviyoScript /> */}
       </body>
     </html>
   );
