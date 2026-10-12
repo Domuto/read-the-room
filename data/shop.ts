@@ -26,16 +26,44 @@ export const shop = {
   phone: "(470) 345-4550",
   phoneHref: "tel:+14703454550",
 
-  // Opening hours. Leave empty until confirmed; the site falls back to
-  // "see Instagram" and the structured data omits hours.
-  // Example: { days: "Wed–Sun", time: "5 PM – 2 AM", schemaDays: ["Wednesday", ...], opens: "17:00", closes: "02:00" }
-  hours: [] as {
-    days: string;
-    time: string;
-    schemaDays: string[];
-    opens: string;
-    closes: string;
-  }[],
+  // Opening hours.
+  hours: [
+    {
+      days: "Wednesday",
+      time: "12 PM – 10 PM",
+      schemaDays: ["Wednesday"],
+      opens: "12:00",
+      closes: "22:00",
+    },
+    {
+      days: "Thursday",
+      time: "12 PM – 2 AM",
+      schemaDays: ["Thursday"],
+      opens: "12:00",
+      closes: "02:00",
+    },
+    {
+      days: "Friday & Saturday",
+      time: "12 PM – 2:30 AM",
+      schemaDays: ["Friday", "Saturday"],
+      opens: "12:00",
+      closes: "02:30",
+    },
+    {
+      days: "Sunday",
+      time: "12 PM – 10 PM",
+      schemaDays: ["Sunday"],
+      opens: "12:00",
+      closes: "22:00",
+    },
+    {
+      days: "Monday & Tuesday",
+      time: "Closed",
+      schemaDays: ["Monday", "Tuesday"],
+      opens: "00:00",
+      closes: "00:00",
+    },
+  ],
 
   // Links — paste your real URLs here
   instagram: "https://instagram.com/readtheroom.atl",

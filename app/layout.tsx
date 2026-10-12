@@ -65,12 +65,14 @@ const jsonLd = {
     addressCountry: "US",
   },
   ...(shop.hours.length > 0 && {
-    openingHoursSpecification: shop.hours.map((h) => ({
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: h.schemaDays,
-      opens: h.opens,
-      closes: h.closes,
-    })),
+    openingHoursSpecification: shop.hours
+      .filter((h) => h.opens !== h.closes)
+      .map((h) => ({
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: h.schemaDays,
+        opens: h.opens,
+        closes: h.closes,
+      })),
   }),
 };
 

@@ -37,10 +37,119 @@ export default function Home() {
           header's z-10 stacking context. */}
       <MobileMenu />
 
-      <h1 className="sr-only">
-        {shop.name} — a vinyl record bar on the BeltLine in Old Fourth Ward,
-        Atlanta
-      </h1>
+      {/* Screen-reader and search-engine indexable content.
+          Keeps the visual landing page minimal while providing rich context
+          and crawlable links for SEO without altering visual appearance. */}
+      <div className="sr-only">
+        <h1>
+          {shop.name} — Vinyl Record Bar &amp; Cocktail Lounge on the BeltLine
+          in Old Fourth Ward, Atlanta
+        </h1>
+        <p>
+          Welcome to {shop.name}, an intimate hi-fi vinyl listening bar and
+          cocktail lounge located at {shop.address} in Atlanta, Georgia. Situated
+          along the Eastside Trail of the Atlanta BeltLine, {shop.name} pairs
+          analog sound, curated record crates, song-named craft cocktails,
+          bites, and coffee in a warm, low-lit space built for music lovers.
+        </p>
+
+        <section>
+          <h2>Analog Sound &amp; The Vinyl Experience</h2>
+          <p>
+            At {shop.name}, the needle drops and the drinks pour slow. Our
+            listening room features a high-fidelity analog sound system spinning
+            records all night long, spanning classic soul, funk, jazz, rare
+            groove, disco, rhythm &amp; blues, and golden era hip-hop. Whether
+            you are settling into a booth for a full album side or browsing our
+            physical bins, every evening is tuned to the room.
+          </p>
+        </section>
+
+        <section>
+          <h2>The Crate &amp; 3D Virtual Tour</h2>
+          <p>
+            Explore our collection online through The Crate, a digital
+            record-flipping experience where you can browse vinyl pressings,
+            condition ratings, and featured titles before your visit. You can
+            also take our interactive 3D virtual tour to preview our bar
+            seating, listening booths, and analog DJ booth.
+          </p>
+        </section>
+
+        <section>
+          <h2>Cocktails, Bites &amp; Daytime Coffee</h2>
+          <p>
+            Our bar program celebrates classic records with handcrafted
+            cocktails named after timeless songs and legendary artists. We also
+            serve natural wines, local craft beers, zero-proof mocktails, light
+            bites, and daytime coffee for those looking to work or unwind with a
+            soundtrack.
+          </p>
+        </section>
+
+        <section>
+          <h2>Hours &amp; Location</h2>
+          <p>
+            Visit us in Old Fourth Ward at {shop.address}.
+            Our opening hours are:
+          </p>
+          <ul>
+            <li>Wednesday: 12:00 PM – 10:00 PM</li>
+            <li>Thursday: 12:00 PM – 2:00 AM</li>
+            <li>Friday &amp; Saturday: 12:00 PM – 2:30 AM</li>
+            <li>Sunday: 12:00 PM – 10:00 PM</li>
+            <li>Monday &amp; Tuesday: Closed</li>
+          </ul>
+          <p>
+            Phone: <a href={shop.phoneHref}>{shop.phone}</a>
+          </p>
+        </section>
+
+        <nav aria-label="Explore Read the Room">
+          <h2>Site Navigation</h2>
+          <ul>
+            <li>
+              <Link href="/menu">Cocktail, Coffee &amp; Food Menu</Link>
+            </li>
+            <li>
+              <Link href="/events">Upcoming Events &amp; DJ Lineups</Link>
+            </li>
+            <li>
+              <Link href="/about">
+                About Read the Room — Our Story &amp; Space
+              </Link>
+            </li>
+            <li>
+              <Link href="/private-events">
+                Private Events &amp; Space Buyouts
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact">Contact Information &amp; Inquiries</Link>
+            </li>
+            <li>
+              <Link href="/visit">
+                Visit Us — Address, Hours &amp; Directions
+              </Link>
+            </li>
+            <li>
+              <Link href="/crate">The Crate — Browse Vinyl Records</Link>
+            </li>
+            <li>
+              <Link href="/tour">3D Virtual Tour of the Lounge</Link>
+            </li>
+            <li>
+              <a
+                href={shop.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Follow @readtheroom.atl on Instagram
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
 
       {/* Top bar */}
       <header className="relative z-10 flex items-center justify-center px-5 py-5 sm:px-8 lg:justify-between">
