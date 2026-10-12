@@ -11,7 +11,7 @@ export const shop = {
   description:
     "Read the Room is a vinyl record bar on the BeltLine in Old Fourth Ward, Atlanta. Song-named cocktails, coffee and a crate of records worth flipping.",
 
-  url: "https://readtheroomatl.com",
+  url: "https://www.readtheroomatl.com",
 
   // Shown in the top bars and footers
   handle: "@readtheroom.atl",
