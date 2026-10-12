@@ -21,13 +21,16 @@ const mono = Space_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(shop.url),
   title: `${shop.name} — ${shop.tagline}`,
-  description:
-    "A vinyl record shop and coffee bar in Atlanta. Dig the crate, grab a coffee, spin something good.",
+  description: shop.description,
+  alternates: { canonical: "/" },
   openGraph: {
     title: `${shop.name} — Vinyl and cocktails`,
-    description: "Vinyl and cocktails in Atlanta. Dig the crate.",
+    description: "Vinyl and cocktails on the BeltLine in Atlanta. Dig the crate.",
     type: "website",
+    url: "/",
+    siteName: shop.name,
     images: [{ url: "/png3.png" }],
   },
   twitter: {
@@ -42,6 +45,35 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BarOrPub",
+  name: shop.name,
+  description: shop.description,
+  url: shop.url,
+  image: `${shop.url}/png3.png`,
+  telephone: shop.phone,
+  servesCuisine: "Cocktails, coffee",
+  hasMap: shop.maps,
+  sameAs: [shop.instagram],
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: shop.street,
+    addressLocality: shop.city,
+    addressRegion: shop.region,
+    postalCode: shop.postalCode,
+    addressCountry: "US",
+  },
+  ...(shop.hours.length > 0 && {
+    openingHoursSpecification: shop.hours.map((h) => ({
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: h.schemaDays,
+      opens: h.opens,
+      closes: h.closes,
+    })),
+  }),
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -51,6 +83,10 @@ export default function RootLayout({
     <html lang="en" className={`${display.variable} ${mono.variable}`}>
       <body>
         {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <div className="grain-overlay" aria-hidden="true" />
         {/* <KlaviyoScript /> */}
       </body>

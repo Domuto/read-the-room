@@ -3,6 +3,7 @@ import PageShell from "@/components/PageShell";
 import { shop } from "@/data/shop";
 
 export const metadata = {
+  alternates: { canonical: "/about" },
   title: `About Us — ${shop.name}`,
   description: `About ${shop.name} — a vinyl record bar and cocktail lounge in Atlanta.`,
 };

@@ -3,6 +3,7 @@ import PrivateEventForm from "@/components/PrivateEventForm";
 import { shop } from "@/data/shop";
 
 export const metadata = {
+  alternates: { canonical: "/private-events" },
   title: `Private Events — ${shop.name}`,
   description: `Host your private event at ${shop.name} in Atlanta.`,
 };

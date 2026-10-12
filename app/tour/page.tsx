@@ -2,8 +2,9 @@ import Link from "next/link";
 import { shop } from "@/data/shop";
 
 export const metadata = {
+  alternates: { canonical: "/tour" },
   title: `3D Tour — ${shop.name}`,
-  description: "Step inside the shop with an interactive 3D walkthrough.",
+  description: `Step inside ${shop.name}, the vinyl record bar on the BeltLine in Old Fourth Ward, with an interactive 3D walkthrough.`,
 };
 
 // Matterport space embedded in-page so it never sends visitors off-site.
@@ -22,9 +23,19 @@ export default function TourPage() {
           >
             ← {shop.name}
           </Link>
-          <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-haze">
-            3D Tour
-          </span>
+          <div className="flex items-center gap-5">
+            <a
+              href={shop.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono text-[10px] uppercase tracking-[0.2em] text-paper/80 transition hover:text-ember"
+            >
+              Instagram
+            </a>
+            <h1 className="font-mono text-[10px] font-normal uppercase tracking-[0.2em] text-haze">
+              3D Tour
+            </h1>
+          </div>
         </div>
       </header>
 

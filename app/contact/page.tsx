@@ -3,6 +3,7 @@ import ContactForm from "@/components/ContactForm";
 import { shop } from "@/data/shop";
 
 export const metadata = {
+  alternates: { canonical: "/contact" },
   title: `Contact — ${shop.name}`,
   description: `Get in touch with ${shop.name} in Atlanta.`,
 };
@@ -33,6 +34,19 @@ export default function ContactPage() {
               className="text-lg text-paper transition hover:text-ember"
             >
               {shop.handle}
+            </a>
+          </dd>
+        </div>
+        <div>
+          <dt className="font-mono text-[10px] uppercase tracking-[0.25em] text-haze">
+            Phone
+          </dt>
+          <dd className="mt-1">
+            <a
+              href={shop.phoneHref}
+              className="text-lg text-paper transition hover:text-ember"
+            >
+              {shop.phone}
             </a>
           </dd>
         </div>

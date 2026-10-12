@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { shop } from "@/data/shop";
+import SiteFooter from "@/components/SiteFooter";
 
-// Shared frame for the simple content pages (About, Contact, Private Events).
+// Shared frame for the simple content pages (About, Menu, Events, Contact, Private Events).
 export default function PageShell({
   label,
   children,
@@ -30,11 +31,7 @@ export default function PageShell({
         {children}
       </main>
 
-      <footer className="border-t border-line px-5 py-6 text-center sm:px-8">
-        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-paper/40">
-          {shop.tagline}
-        </span>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

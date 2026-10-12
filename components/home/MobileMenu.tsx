@@ -2,16 +2,20 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { shop } from "@/data/shop";
 
 const LINKS = [
+  { href: "/menu", label: "Menu" },
+  { href: "/events", label: "Events" },
   { href: "/about", label: "About" },
   { href: "/private-events", label: "Private Events" },
   { href: "/contact", label: "Contact" },
+  { href: "/visit", label: "Visit" },
   { href: "/tour", label: "3D Tour" },
   { href: "/crate", label: "The Crate" },
 ];
 
-// Hamburger menu for small screens — the top nav is hidden below `sm`.
+// Hamburger menu for small screens — the top nav is hidden below `lg`.
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
 
@@ -34,7 +38,7 @@ export default function MobileMenu() {
   }, [open]);
 
   return (
-    <div className="sm:hidden">
+    <div className="lg:hidden">
       <button
         type="button"
         onClick={() => setOpen(true)}
@@ -83,7 +87,7 @@ export default function MobileMenu() {
             </button>
           </div>
 
-          <nav className="flex flex-1 flex-col items-center justify-center gap-8">
+          <nav className="flex flex-1 flex-col items-center justify-center gap-7">
             {LINKS.map((link) => (
               <Link
                 key={link.href}
@@ -94,6 +98,15 @@ export default function MobileMenu() {
                 {link.label}
               </Link>
             ))}
+            <a
+              href={shop.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
+              className="font-mono text-sm uppercase tracking-[0.3em] text-paper/70 transition hover:text-ember"
+            >
+              Instagram
+            </a>
           </nav>
         </div>
       )}

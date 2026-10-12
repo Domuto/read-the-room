@@ -37,8 +37,13 @@ export default function Home() {
           header's z-10 stacking context. */}
       <MobileMenu />
 
+      <h1 className="sr-only">
+        {shop.name} — a vinyl record bar on the BeltLine in Old Fourth Ward,
+        Atlanta
+      </h1>
+
       {/* Top bar */}
-      <header className="relative z-10 flex items-center justify-center px-5 py-5 sm:justify-between sm:px-8">
+      <header className="relative z-10 flex items-center justify-center px-5 py-5 sm:px-8 lg:justify-between">
         <Image
           src="/readtheroom.png"
           alt={`${shop.name} logo`}
@@ -47,25 +52,51 @@ export default function Home() {
           priority
           className="h-12 w-auto sm:h-14"
         />
-        <nav className="absolute right-5 top-1/2 hidden -translate-y-1/2 items-center gap-6 sm:static sm:mr-16 sm:flex sm:translate-y-0">
+        <nav className="absolute right-5 top-1/2 hidden -translate-y-1/2 items-center gap-6 lg:static lg:mr-16 lg:flex lg:translate-y-0">
+          <Link
+            href="/menu"
+            className="whitespace-nowrap font-mono text-[10px] uppercase tracking-[0.25em] text-paper/40 transition hover:text-paper/80"
+          >
+            Menu
+          </Link>
+          <Link
+            href="/events"
+            className="whitespace-nowrap font-mono text-[10px] uppercase tracking-[0.25em] text-paper/40 transition hover:text-paper/80"
+          >
+            Events
+          </Link>
           <Link
             href="/about"
-            className="font-mono text-[10px] uppercase tracking-[0.25em] text-paper/40 transition hover:text-paper/80"
+            className="whitespace-nowrap font-mono text-[10px] uppercase tracking-[0.25em] text-paper/40 transition hover:text-paper/80"
           >
             About
           </Link>
           <Link
             href="/private-events"
-            className="font-mono text-[10px] uppercase tracking-[0.25em] text-paper/40 transition hover:text-paper/80"
+            className="whitespace-nowrap font-mono text-[10px] uppercase tracking-[0.25em] text-paper/40 transition hover:text-paper/80"
           >
             Private Events
           </Link>
           <Link
             href="/contact"
-            className="font-mono text-[10px] uppercase tracking-[0.25em] text-paper/40 transition hover:text-paper/80"
+            className="whitespace-nowrap font-mono text-[10px] uppercase tracking-[0.25em] text-paper/40 transition hover:text-paper/80"
           >
             Contact
           </Link>
+          <Link
+            href="/visit"
+            className="whitespace-nowrap font-mono text-[10px] uppercase tracking-[0.25em] text-paper/40 transition hover:text-paper/80"
+          >
+            Visit
+          </Link>
+          <a
+            href={shop.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="whitespace-nowrap font-mono text-[10px] uppercase tracking-[0.25em] text-paper/40 transition hover:text-paper/80"
+          >
+            Instagram
+          </a>
         </nav>
       </header>
 

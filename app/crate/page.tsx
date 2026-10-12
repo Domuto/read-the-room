@@ -2,10 +2,12 @@ import Link from "next/link";
 import { records } from "@/data/records";
 import { shop } from "@/data/shop";
 import CrateClient from "@/components/CrateClient";
+import SiteFooter from "@/components/SiteFooter";
 
 export const metadata = {
+  alternates: { canonical: "/crate" },
   title: `The Crate — ${shop.name}`,
-  description: "Browse the records currently in the shop.",
+  description: `Browse the records in the crate at ${shop.name}, the vinyl record bar on the BeltLine in Old Fourth Ward, Atlanta.`,
 };
 
 export default function CratePage() {
@@ -46,37 +48,7 @@ export default function CratePage() {
         <CrateClient records={records} />
       </div>
 
-      {/* Footer */}
-      <footer className="border-t border-line">
-        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-5 px-5 py-12 sm:flex-row sm:items-center sm:px-8">
-          <div>
-            <p className="font-display text-lg font-bold text-paper">
-              {shop.name}
-            </p>
-            <p className="mt-1 font-mono text-xs text-haze">
-              {shop.address} · {shop.hours}
-            </p>
-          </div>
-          <div className="flex gap-5">
-            <a
-              href={shop.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-mono text-xs uppercase tracking-widest text-paper/80 transition hover:text-ember"
-            >
-              Instagram
-            </a>
-            <a
-              href={shop.maps}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-mono text-xs uppercase tracking-widest text-paper/80 transition hover:text-ember"
-            >
-              Directions
-            </a>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
