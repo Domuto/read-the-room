@@ -29,6 +29,7 @@ To make a production build locally: `npm run build` then `npm start`.
 | What you want to change | File |
 | --- | --- |
 | Shop name, hours, address, Instagram, menu link | `data/shop.ts` |
+| Full menu PDF shown on `/menu` | `public/records/RTR MENU v2.pdf` |
 | The records in the crate | `data/records.ts` |
 | Landing buttons | `app/page.tsx` (the `BUTTONS` array at the top) |
 | Brand colors | `tailwind.config.ts` (the `colors` block) |

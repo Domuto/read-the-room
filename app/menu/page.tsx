@@ -19,9 +19,18 @@ export default function MenuPage() {
         record of the night.
       </p>
 
+      <a
+        href="/records/RTR%20MENU%20v2.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-8 inline-flex rounded-full border border-paper/30 px-6 py-3 font-mono text-xs uppercase tracking-[0.2em] text-paper transition hover:border-ember hover:bg-ember hover:text-ink"
+      >
+        View Full Menu (PDF)
+      </a>
+
       {menu.length === 0 ? (
-        <p className="mt-12 border-l-2 border-ember pl-5 text-base leading-relaxed text-paper/70 sm:text-lg">
-          The full menu is on its way. Follow{" "}
+        <p className="mt-8 border-l-2 border-ember pl-5 text-base leading-relaxed text-paper/70 sm:text-lg">
+          Follow{" "}
           <a
             href={shop.instagram}
             target="_blank"
@@ -30,7 +39,7 @@ export default function MenuPage() {
           >
             {shop.handle}
           </a>{" "}
-          for what&apos;s pouring.
+          for updates on what&apos;s pouring.
         </p>
       ) : (
         <div className="mt-12 space-y-14">

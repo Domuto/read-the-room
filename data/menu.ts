@@ -2,7 +2,7 @@
  * ────────────────────────────────────────────────────────────
  *  MENU
  *  Add sections and items here and /menu updates automatically.
- *  While `menu` is empty the page shows a "coming soon" note.
+ *  The full menu PDF is linked from the page independently.
  * ────────────────────────────────────────────────────────────
  */
 export type MenuItem = {
